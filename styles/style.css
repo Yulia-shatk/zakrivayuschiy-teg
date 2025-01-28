@@ -66,13 +66,14 @@
   width: 0%;
   height: 3px;
   margin-top: 2px;
-  background-color: black;
+  background-color: var(--accent-color);
   transition: width 300ms, background-color 0.5s;
 }
 .theme-menu__item:hover::after {
   inline-size: 100%;
   opacity: 0.6;
 }
+
 .theme-menu__button {
   position: relative;
   background: transparent;
@@ -100,13 +101,14 @@
 
 .theme-menu__button:focus {
   outline: none;
-  opacity: 0.6;
+  opacity: 1;
+  border:none;
 }
 
 .theme-menu__button:focus-visible {
-  opacity: 0.6;
-  transition: opacity 0.5s;
+  opacity: 1;
   outline: none;
+  border:none;
 }
 
 .theme-menu__button::after {
@@ -125,14 +127,15 @@
 
 .theme-menu__button:focus-visible::after {
   transform: scaleX(1);
+  border:none;
 }
 .button:focus {
   outline: none;
   box-shadow: 2px 2px 0 0 var(--accent-color);
+  transition: opacity 0.5s;
 }
 button:focus-visible {
   border: 2px solid var(--accent-color);
-  box-shadow: 2px 2px 0 0 var(--accent-color);
 }
 .button {
   position: relative;
@@ -142,13 +145,15 @@ button:focus-visible {
 
 .button:hover .button__text {
   color: var(--bg-color);
+  mix-blend-mode:luminosity;
 }
 .card__footer {
   padding-inline: 25px;
-  margin-block-start: 20px;
+  margin-block-start: 2px;
   margin-block-end: 20px;
   display: flex;
   justify-content: end;
+  margin-top: 0;
 }
 .button:hover .footer__icon {
   color: var(--bg-color);
@@ -183,6 +188,10 @@ button:focus-visible {
   background-color: var(--bg-color);
   cursor: pointer;
   transition: outline 0.3s ease;
+  display: grid;
+  padding: 0px;
+  margin-right: 12px;
+  align-content: center;
 }
 
 .card__icon-button:focus {
@@ -196,7 +205,6 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 51px;
   inline-size: var(--width);
 }
 
@@ -214,10 +222,10 @@ button:focus-visible {
   font-family: var(--main-font-family);
 }
 .card_content {
-  padding: 25px;
+  padding: 25px 25px 0;
 }
-.card_content-paragraph {
-  padding-block-start: 27px;
+.content-paragraph {
+  padding-block-end: 27px;
 }
 .card_picture {
   object-fit: cover;
